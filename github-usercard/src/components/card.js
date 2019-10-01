@@ -1,4 +1,5 @@
 import React from "react";
+import styled from 'styled-components';
 
 export default class UserCard extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class UserCard extends React.Component {
   render() {
     const { avatar_url, name, username, location, html_url, followers, following, bio } = this.props.user;
     return (
-      <div>
+      <CardContainer>
         <img src={avatar_url} />
         <div>
             <h4>Details</h4>
@@ -22,7 +23,12 @@ export default class UserCard extends React.Component {
             <p>{`Bio: ${bio}`}</p>
 
         </div>
-      </div>
+      </CardContainer>
     );
   }
 }
+
+
+const CardContainer = styled.div`
+    display: flex;
+`
